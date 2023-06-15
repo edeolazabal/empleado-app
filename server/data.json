@@ -1,0 +1,22 @@
+{
+  "empleados": [
+    {
+      "id": 1,
+      "nombre": "Aurelio",
+      "apellido": "Ulloa",
+      "email": "aulloa@gmail.com"
+    },
+    {
+      "id": 2,
+      "nombre": "Juan",
+      "apellido": "perez",
+      "email": "jperez@gmail.com"
+    },
+    {
+      "id": 3,
+      "nombre": "Alberto",
+      "apellido": "Ramirez",
+      "email": "aramirez@upc.edu.pe"
+    }
+  ]
+}
