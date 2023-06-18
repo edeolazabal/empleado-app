@@ -1,0 +1,95 @@
+<div class="container">
+<mat-card>
+    <h2 class="alinear">Registro de Empleados</h2>
+    <form [formGroup]="myForm" autocomplete="off">
+      <div class="empleado-container">
+        <mat-form-field class="example-container" [style.fontSize.px]="16">
+          <mat-label>Nombre</mat-label>
+          <input matInput formControlName="nombre" />
+        </mat-form-field>
+        <div
+          *ngIf="
+            myForm.get('nombre')?.hasError('required') &&
+            myForm.get('nombre')?.touched
+          "
+          style="margin-top: -20px"
+        >
+          <span class="mda-form-msg"> Este campo es obligatorio </span>
+        </div>
+        <div
+          *ngIf="myForm.get('nombre')?.hasError('maxlength')"
+          style="margin-top: -20px"
+        >
+          <span class="mda-form-msg">
+            Este campo debe tener como máximo 30 caracteres
+          </span>
+        </div>
+  
+        <mat-form-field class="example-container" [style.fontSize.px]="16">
+          <mat-label>Apellido</mat-label>
+          <input matInput formControlName="apellido" />
+        </mat-form-field>
+        <div
+          *ngIf="
+            myForm.get('apellido')?.hasError('required') &&
+            myForm.get('apellido')?.touched
+          "
+          style="margin-top: -20px"
+        >
+          <span class="mda-form-msg"> Este campo es obligatorio </span>
+        </div>
+        <div
+          *ngIf="myForm.get('apellido')?.hasError('maxlength')"
+          style="margin-top: -20px"
+        >
+          <span class="mda-form-msg">
+            Este campo debe tener como máximo 250 caracteres
+          </span>
+        </div>
+
+        <mat-form-field class="example-container" [style.fontSize.px]="16">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" />
+          </mat-form-field>
+          <div
+            *ngIf="
+              myForm.get('email')?.hasError('required') &&
+              myForm.get('email')?.touched
+            "
+            style="margin-top: -20px"
+          >
+            <span class="mda-form-msg"> Este campo es obligatorio </span>
+          </div>
+          <div
+            *ngIf="myForm.get('email')?.hasError('maxlength')"
+            style="margin-top: -20px"
+          >
+            <span class="mda-form-msg">
+              Este campo debe tener como máximo 250 caracteres
+            </span>
+          </div>        
+
+        <button
+          mat-raised-button
+          color="primary"
+          [disabled]="myForm.invalid"
+          type="button"
+          style="margin-left: 10 px"
+          (click)="addEmpleado()"
+        >
+          Aceptar
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          type="button"
+          routerLink="/listaEmpleados"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+  
+  
